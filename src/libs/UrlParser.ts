@@ -45,7 +45,7 @@ const findTarget = (message: string): { type: string; matched: string }[] => {
     });
   }
 
-  Logger.info(`found urls: ${JSON.stringify(results)}`);
+  results.length > 0 && Logger.info(`found urls: ${JSON.stringify(results)}`);
   return results;
 };
 
