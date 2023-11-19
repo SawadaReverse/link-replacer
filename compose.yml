@@ -1,0 +1,6 @@
+services:
+  bot:
+    build:
+      context: ./
+      args:
+        - BOT_TOKEN=${BOT_TOKEN}
