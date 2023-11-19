@@ -4,7 +4,7 @@
   "description": "Delete unnecessary params in specified links from Discord messages.",
   "main": "index.js",
   "scripts": {
-    "dev": "docker compose up",
+    "dev": "docker compose up --build",
     "test": "jest",
     "typeCheck": "tsc --noEmit",
     "lint:js": "eslint --ext .js,.ts .",
