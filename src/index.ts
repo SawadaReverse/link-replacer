@@ -1,6 +1,7 @@
 import { Events, Client } from 'discord.js';
 import { Logger } from './libs/Logger';
 import { replaceUrl } from './libs/UrlParser';
+import { GatewayIntentBits } from 'discord.js';
 
 let TOKEN = process.env.BOT_TOKEN;
 if (!TOKEN) {
@@ -18,7 +19,11 @@ if (!TOKEN) {
 Logger.debug(`token load successful. loading...`);
 
 const client = new Client({
-  intents: ['GuildMessages', 'DirectMessages'],
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.MessageContent,
+    GatewayIntentBits.GuildMessages,
+  ],
 });
 
 client.login(TOKEN);
@@ -30,14 +35,9 @@ client.once(Events.ClientReady, (c) => {
 client.on(Events.MessageCreate, async (message) => {
   if (message.author.bot) return;
 
-  // TODO: delete this later
-  Logger.info(`Message: ${message.content}`);
-  message.channel.send(message.content);
-
   const parsed = replaceUrl(message.content);
-  Logger.info(`Parsed: ${parsed}`);
-
   if (parsed.length > 0) {
+    Logger.debug(`Parsed: ${parsed}`);
     message.channel.send(parsed.join('\n'));
   }
 });
