@@ -92,8 +92,9 @@ const instagramTestCases: TestPatterns[] = [
     result: ['https://ddinstagram.com/p/CzEpxirv5Vi/'],
   },
   {
-    title: 'query params will NOT delete',
-    message: 'https://www.instagram.com/p/CyWn_tQyKAH/?img_index=1',
+    title: 'query params will NOT delete exclude "igshid"',
+    message:
+      'https://www.instagram.com/p/CyWn_tQyKAH/?img_index=1&igshid=NmJiYWZiY2E0Mg==',
     result: ['https://ddinstagram.com/p/CyWn_tQyKAH/?img_index=1'],
   },
   {
@@ -131,6 +132,12 @@ const tiktokTestCases: TestPatterns[] = [
     title: 'tiktok single url with "www."',
     message: 'https://www.tiktok.com/@tiktok/video/7296959659003497771',
     result: ['https://vxtiktok.com/@tiktok/video/7296959659003497771'],
+  },
+  {
+    title: 'query params will delete',
+    message:
+      'https://www.tiktok.com/@waroosh0/video/7298952434242555137?is_from_webapp=1&sender_device=mobile&sender_web_id=7309318916606002689',
+    result: ['https://vxtiktok.com/@waroosh0/video/7298952434242555137'],
   },
   {
     title: 'extract url from message sentences',
