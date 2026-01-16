@@ -17,6 +17,6 @@ export const TAEGET_DOMAINS: Record<TARGETS, RegExp> = {
 export const REPLACE_DOMAINS: Record<TARGETS, string> = {
   TWITTER: 'fxtwitter.com',
   X: 'fixupx.com',
-  INSTAGRAM: 'ddinstagram.com',
+  INSTAGRAM: 'fxstagram.com',
   TIKTOK: 'vxtiktok.com',
 };
