@@ -84,24 +84,24 @@ const instagramTestCases: TestPatterns[] = [
   {
     title: 'instagram single url',
     message: 'https://instagram.com/p/CzEpxirv5Vi/',
-    result: ['https://ddinstagram.com/p/CzEpxirv5Vi/'],
+    result: ['https://uuinstagram.com/p/CzEpxirv5Vi/'],
   },
   {
     title: 'instagram single url with "www."',
     message: 'https://www.instagram.com/p/CzEpxirv5Vi/',
-    result: ['https://ddinstagram.com/p/CzEpxirv5Vi/'],
+    result: ['https://uuinstagram.com/p/CzEpxirv5Vi/'],
   },
   {
     title: 'query params will NOT delete exclude "igshid"',
     message:
       'https://www.instagram.com/p/CyWn_tQyKAH/?img_index=1&igshid=NmJiYWZiY2E0Mg==',
-    result: ['https://ddinstagram.com/p/CyWn_tQyKAH/?img_index=1'],
+    result: ['https://uuinstagram.com/p/CyWn_tQyKAH/?img_index=1'],
   },
   {
     title: 'extract url from message sentences',
     message:
       'This is so cute post! XD https://www.instagram.com/p/CzEpxirv5Vi/ This is so cute post! XD',
-    result: ['https://ddinstagram.com/p/CzEpxirv5Vi/'],
+    result: ['https://uuinstagram.com/p/CzEpxirv5Vi/'],
   },
   {
     title: 'extract several url from message sentences',
@@ -110,8 +110,8 @@ const instagramTestCases: TestPatterns[] = [
       https://www.instagram.com/p/CyWn_tQyKAH/?img_index=1
       This is so cute post! XD`,
     result: [
-      'https://ddinstagram.com/p/CzEpxirv5Vi/',
-      'https://ddinstagram.com/p/CyWn_tQyKAH/?img_index=1',
+      'https://uuinstagram.com/p/CzEpxirv5Vi/',
+      'https://uuinstagram.com/p/CyWn_tQyKAH/?img_index=1',
     ],
   },
 ];
